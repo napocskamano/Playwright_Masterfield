@@ -1,48 +1,67 @@
-# Maven
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
 
-# IntelliJ IDEA
-.idea/
-*.iws
-*.iml
-*.ipr
-out/
-
-# Eclipse
-.classpath
-.project
-.settings/
-bin/
-
-# VS Code
-.vscode/
-
-# Test reports
-test-output/
-test-results/
-cucumber-report.*
-*.log
+# TypeScript
+*.tsbuildinfo
+dist/
+build/
 
 # Playwright
 playwright/.cache/
 test-results/
 playwright-report/
+trace.zip
+screenshots/
+videos/
+
+# Cucumber
+cucumber-report.html
+cucumber-report.json
+reports/
+
+# IDE
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+*.swp
+*.swo
+*~
 
 # OS
 .DS_Store
 Thumbs.db
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test coverage
+coverage/
+.nyc_output/
 
 # Temporary files
 *.tmp
-*.swp
-*~
+tmp/
+temp/
 
