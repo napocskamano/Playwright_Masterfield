@@ -1,67 +1,11 @@
-# Node.js
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-.pnpm-debug.log*
-
-# TypeScript
-*.tsbuildinfo
 dist/
-build/
-
-# Playwright
-playwright/.cache/
+reports/
 test-results/
 playwright-report/
-trace.zip
-screenshots/
-videos/
-
-# Cucumber
-cucumber-report.html
-cucumber-report.json
-reports/
-
-# IDE
-.idea/
-*.iws
-*.iml
-*.ipr
-.vscode/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Desktop.ini
-
-# Environment variables
 .env
-.env.local
-.env.*.local
-
-# Logs
-logs/
+.DS_Store
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Test coverage
-coverage/
-.nyc_output/
-
-# Temporary files
-*.tmp
-tmp/
-temp/
-
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

@@ -1,0 +1,36 @@
+{
+  "name": "digitalbank-playwright-cucumber-typescript",
+  "version": "1.0.0",
+  "description": "Digital Bank Test Automation - Playwright + Cucumber + TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:parallel": "cucumber-js --parallel 2",
+    "test:tag": "cucumber-js --tags",
+    "test:login": "cucumber-js --tags @login",
+    "test:cookie": "cucumber-js --tags @cookie",
+    "test:dashboard": "cucumber-js --tags @dashboard",
+    "test:savings": "cucumber-js --tags @savings",
+    "report": "node src/support/report.js",
+    "pretest": "tsc --noEmit"
+  },
+  "keywords": [
+    "playwright",
+    "cucumber",
+    "typescript",
+    "bdd",
+    "automation",
+    "digitalbank"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.0.1",
+    "@playwright/test": "^1.48.2",
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "cucumber-html-reporter": "^7.2.0"
+  }
+}
+
