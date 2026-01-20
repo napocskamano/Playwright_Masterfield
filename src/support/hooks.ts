@@ -36,7 +36,7 @@ BeforeAll(async function () {
 Before(async function () {
   browser = await chromium.launch({
     headless: false,  // Böngésző látható lesz
-    slowMo: 500,      // 500ms lassítás a lépések között (jobban látható)
+    slowMo: 100,      // 100ms lassítás a lépések között (jobban látható)
     args: [
       '--start-maximized',  // Böngésző maximalizálása indításkor
       '--disable-blink-features=AutomationControlled',

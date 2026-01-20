@@ -15,7 +15,8 @@ export class HomePage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.welcomeMessage = page.locator('//h2[contains(text(),"Welcome")] | //*[contains(@class,"welcome") or contains(text(),"Welcome")]').first();
+    // A welcome message a breadcrumb-ban van (#right-panel > div.breadcrumbs > ol.breadcrumb > li)
+    this.welcomeMessage = page.locator('#right-panel ol.breadcrumb li').first();
     this.leftSideMenu = page.locator('aside, .sidebar, nav.sidebar').first();
     this.successMessage = page.locator('.alert-success, .alert.alert-success, div[role="alert"].alert-success').first();
     this.logoutButton = page.locator('//a[contains(text(),"Logout")]');
@@ -41,9 +42,14 @@ export class HomePage extends BasePage {
 
   async isWelcomeMessageDisplayed(): Promise<boolean> {
     try {
+      // Várjuk meg a breadcrumb megjelenését
       await this.welcomeMessage.waitFor({ state: 'visible', timeout: this.timeout });
-      return await this.welcomeMessage.isVisible();
+      const isVisible = await this.welcomeMessage.isVisible();
+      const text = await this.welcomeMessage.textContent();
+      console.log(`Breadcrumb visible: ${isVisible}, text: "${text}"`);
+      return isVisible;
     } catch (error) {
+      console.log('Error checking breadcrumb (welcome message):', error);
       return false;
     }
   }
@@ -51,8 +57,11 @@ export class HomePage extends BasePage {
   async getWelcomeMessage(): Promise<string> {
     try {
       await this.welcomeMessage.waitFor({ state: 'visible', timeout: this.timeout });
-      return await this.welcomeMessage.textContent() || '';
+      const text = await this.welcomeMessage.textContent() || '';
+      console.log(`Breadcrumb text content: "${text}"`);
+      return text.trim();
     } catch (error) {
+      console.log('Error getting breadcrumb text:', error);
       return '';
     }
   }
